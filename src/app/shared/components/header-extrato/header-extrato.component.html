@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <div class="container">
+    <div class="content-container">
+      <div id="title">IBM + BRADESCO</div>
+      <div id="conta">
+        <div id="label-conta" class="label">Conta:</div>
+        <div class="conta-info">{{ cliente?.nome }} | {{ cliente?.numeroConta }}</div>
+      </div>
+
+      <div id="saldo">
+        <div id="label-saldo" class="label">Saldo:</div>
+        <div class="saldo-info">{{ UtilsFormsService.formatarSaldo(cliente?.conta?.saldo) }}</div>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

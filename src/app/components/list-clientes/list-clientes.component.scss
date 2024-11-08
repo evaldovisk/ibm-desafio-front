@@ -1,0 +1,30 @@
+mat-form-field {
+  width: 100%;
+
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+
+}
+
+.table-container {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  table {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  mat-paginator {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+.example-button-row {
+    &button {
+      color: white;
+    }
+  }
+}
+

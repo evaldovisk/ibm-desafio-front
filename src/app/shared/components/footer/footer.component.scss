@@ -1,0 +1,27 @@
+.spacer{
+  flex: 1;
+}
+mat-toolbar {
+  display: flex;
+  bottom: 0;
+  position: fixed;
+
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+
+  background: #CC092F;
+  color: #fff;
+
+  div {
+    display: flex;
+  }
+}
+
+.content-container {
+  justify-content: space-between;
+  align-items: center;
+}

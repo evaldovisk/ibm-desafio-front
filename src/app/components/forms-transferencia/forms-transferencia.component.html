@@ -1,0 +1,33 @@
+<form [formGroup]="transferenciaForm" (ngSubmit)="submitForm()">
+  <div id="title">
+    Transferência
+  </div>
+  <div class="form-container">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Destinatário</mat-label>
+      <input matInput [formControlName]="'destinatario'" (input)="filterOptions($event)"
+             [matAutocomplete]="auto" placeholder="Digite para buscar" required>
+
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith">
+        <mat-option *ngFor="let option of filteredOptions" [value]="option">
+          {{ option.nome }} | {{ option.numeroConta }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <div class="form-actions">
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Valor</mat-label>
+        <input matInput [formControlName]="'valor'" placeholder="Digite um valor" required>
+      </mat-form-field>
+
+      <div id="button">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!transferenciaForm.valid">
+          Realizar Transferência
+        </button>
+      </div>
+
+    </div>
+    <!-- Valor -->
+
+  </div>
+</form>

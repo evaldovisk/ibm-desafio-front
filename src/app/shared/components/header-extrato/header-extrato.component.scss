@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  width: 100%;
+
+
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  //justify-content: space-between;
+  gap: 20px;
+
+
+}
+
+mat-toolbar {
+  background: #CC092F;
+  color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+  #title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 17px;
+
+
+  }
+}
+
+#conta, #saldo {
+  display: flex;
+  flex-direction: column;
+
+
+  .label {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: -8px;
+    font-weight: 300;
+
+  }
+
+  .conta-info, .saldo-info {
+    font-size: 18px;
+    font-weight: 500;
+
+
+  }
+
+}
+
+#saldo{
+  margin-left: auto;
+}
+
+#conta {
+  border-left: 1px solid #FFFFFF;
+  padding-left: 20px;
+}

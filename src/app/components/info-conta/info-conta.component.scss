@@ -1,0 +1,28 @@
+#title {
+  //border-top: 1px solid black;
+
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 17px;
+  color: black;
+  padding: 15px 0 20px 8px;
+  margin-bottom: 10px;
+}
+
+.info-container {
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .infos {
+    display: flex;
+    justify-content: space-between;
+
+    .info-title {
+      font-weight: 500;
+
+      color: #CC092F;
+    }
+  }
+}

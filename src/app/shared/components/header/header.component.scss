@@ -1,0 +1,78 @@
+mat-toolbar {
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  background: #CC092F;
+  color: #fff;
+
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+  #title {
+    font-size: 22px;
+  }
+
+  div {
+    display: flex;
+  }
+
+}
+
+button {
+  background: none;
+  border: none;
+  text-decoration: none;
+
+}
+
+.nav-button p {
+
+  cursor: pointer;
+
+  margin-left: 20px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 15px;
+  padding-bottom: 3px;
+
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  position: relative;
+  overflow: hidden;
+
+}
+
+
+.nav-button p:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFFFFF;
+  height: 1px;
+  transform: translateX(-195px);
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+.nav-button p:hover:before,
+.nav-button p:focus:before,
+.nav-button p:active:before {
+  transform: translateX(0);
+}
+
+
+.content-container {
+  justify-content: space-between;
+  align-items: center;
+}
+
+

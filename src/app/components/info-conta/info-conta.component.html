@@ -1,0 +1,30 @@
+<div id="title">
+  Informações Conta
+</div>
+
+<div class="info-container">
+  <div class="infos">
+    <div class="info-title">Nome</div>
+    <div> {{ cliente?.nome }}</div>
+  </div>
+
+  <div class="infos">
+    <div class="info-title">Idade</div>
+    <div> {{ cliente?.idade }} anos</div>
+  </div>
+
+  <div class="infos">
+    <div class="info-title">Email</div>
+    <div> {{ cliente?.email }} </div>
+  </div>
+
+  <div class="infos">
+    <div class="info-title">Nº Conta</div>
+    <div> {{ cliente?.conta?.numeroConta }} </div>
+  </div>
+
+  <div class="infos">
+    <div class="info-title">Data Criação</div>
+    <div> {{ UtilsFormsService.formatarData(cliente?.conta?.dataCriacao) }} </div>
+  </div>
+</div>
