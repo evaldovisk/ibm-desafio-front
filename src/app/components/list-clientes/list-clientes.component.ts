@@ -1,4 +1,4 @@
-import {Component, inject, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, inject, OnInit, ViewChild} from '@angular/core';
 import {ClienteService} from '../../shared/services/cliente.service';
 import {Cliente} from '../../shared/interfaces/cliente';
 
@@ -9,7 +9,6 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import {MatButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
-import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
 
 @Component({
@@ -23,6 +22,8 @@ import {Router} from '@angular/router';
 export class ListClientesComponent implements OnInit {
   router = inject(Router);
   clienteService = inject(ClienteService);
+  cdr = inject(ChangeDetectorRef);
+
 
   displayedColumns: string[] = ['nome', 'email', 'numeroConta', 'botao'];
   dataSource = new MatTableDataSource<Cliente>([]);
@@ -57,7 +58,11 @@ export class ListClientesComponent implements OnInit {
       this.dataSource.data = clientes;
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      this.cdr.detectChanges();
     });
   }
 
+  refresh() {
+    this.atualizarListaClientes();
+  }
 }

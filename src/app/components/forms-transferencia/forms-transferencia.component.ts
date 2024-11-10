@@ -95,11 +95,17 @@ export class FormsTransferenciaComponent {
 
     this.transferenciaService.realizarTransferencia(transferenciaJSON).subscribe({
       next: (response) =>
+      {
         this.toastr.success('Transferência realizada com sucesso!', 'Sucesso', {
           timeOut: 3000,
           positionClass: 'toast-top-right',
           progressBar: true,
-        }),
+        });
+
+        this.refreshEvent.emit()
+
+      }
+        ,
       error: (error) =>
         this.toastr.error('Ocorreu um erro inesperado!', 'Erro', {
           timeOut: 3000,
@@ -108,7 +114,6 @@ export class FormsTransferenciaComponent {
         }),
     });
 
-    this.refreshEvent.emit()
   }
 
   formatValorForPost(valor: string): number {

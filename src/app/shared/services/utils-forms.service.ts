@@ -12,6 +12,9 @@ export class UtilsFormsService {
   private destroySubject = new Subject<void>();
   destroy$ = this.destroySubject.asObservable();
 
+  private refreshSubject = new Subject<void>();
+  refresh$ = this.refreshSubject.asObservable();
+
   constructor() { }
 
   triggerCreate(component: Type<any>){
@@ -21,6 +24,10 @@ export class UtilsFormsService {
 
   triggerDestroy(){
     this.destroySubject.next();
+  }
+
+  triggerRefresh() {
+    this.refreshSubject.next();
   }
 
   static formatarSaldo(saldo: number | undefined): string {

@@ -54,21 +54,23 @@ export class FormsClienteComponent {
       const cliente: Cliente = this.formulario.value;
 
       this.clienteService.post(cliente).subscribe({
-        next: (response) => this.toastr.success('Cadastro reaizado com sucesso!', 'Sucesso', {
-          timeOut: 3000,
-          positionClass: 'toast-top-right',
-          progressBar: true
-        }),
-        error: (error) => this.toastr.error('Ocorreu um error inesperado!', 'Error', {
-          timeOut: 3000,
-          positionClass: 'toast-top-right',
-          progressBar: true
-        })
+        next: (response) => {
+          this.toastr.success('Cadastro realizado com sucesso!', 'Sucesso', {
+            timeOut: 3000,
+            positionClass: 'toast-top-right',
+            progressBar: true
+          });
+          this.utilsService.triggerRefresh();
+        },
+        error: (error) => {
+          this.toastr.error('Ocorreu um erro inesperado!', 'Error', {
+            timeOut: 3000,
+            positionClass: 'toast-top-right',
+            progressBar: true
+          });
+        }
       });
-
-      this.atualizarClientes.emit();
     }
-
   }
 
   protected onInput(event: Event) {
