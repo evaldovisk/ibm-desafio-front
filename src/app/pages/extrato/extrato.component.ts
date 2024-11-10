@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, ViewChild} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {Cliente} from '../../shared/interfaces/cliente';
 import {HeaderExtratoComponent} from '../../shared/components/header-extrato/header-extrato.component';
@@ -21,6 +21,9 @@ import {InfoContaComponent} from '../../components/info-conta/info-conta.compone
   styleUrl: './extrato.component.scss'
 })
 export class ExtratoComponent implements OnInit {
+  @ViewChild('header') headerComponent!: HeaderExtratoComponent;
+  @ViewChild('list') listComponent!: ListTransacoesComponent;
+
   router = inject(Router);
   cliente: Cliente | null = null;
 
@@ -39,5 +42,11 @@ export class ExtratoComponent implements OnInit {
         }
       }
     });
+  }
+
+
+  onRefresh() {
+    this.headerComponent.refresh();
+    this.listComponent.refresh();
   }
 }

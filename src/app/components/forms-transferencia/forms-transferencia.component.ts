@@ -1,4 +1,4 @@
-import {Component, inject, Input} from '@angular/core';
+import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
 import {MatError, MatFormField, MatLabel} from '@angular/material/form-field';
 import {MatOption} from '@angular/material/core';
 import {MatSelect, MatSelectTrigger} from '@angular/material/select';
@@ -41,6 +41,8 @@ export class FormsTransferenciaComponent {
   clienteService = inject(ClienteService);
   transferenciaService = inject(TransacaoService);
 
+
+  @Output() refreshEvent = new EventEmitter<void>();
   options: Cliente[] = [];
   filteredOptions: Cliente[] = [];
   selectedValue: Cliente | undefined;
@@ -105,6 +107,8 @@ export class FormsTransferenciaComponent {
           progressBar: true,
         }),
     });
+
+    this.refreshEvent.emit()
   }
 
   formatValorForPost(valor: string): number {

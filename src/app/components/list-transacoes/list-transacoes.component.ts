@@ -86,6 +86,9 @@ export class ListTransacoesComponent implements OnInit {
 
   filterByDate(number: number) {
 
+  }
 
+  refresh() {
+    this.atualizarListaTransacao();
   }
 }

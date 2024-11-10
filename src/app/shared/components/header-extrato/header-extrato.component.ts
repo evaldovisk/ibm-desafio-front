@@ -33,4 +33,9 @@ export class HeaderExtratoComponent implements OnInit {
   }
 
   protected readonly UtilsFormsService = UtilsFormsService;
+
+  refresh() {
+
+    this.atualizaSaldo();
+  }
 }

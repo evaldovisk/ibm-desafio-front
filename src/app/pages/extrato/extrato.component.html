@@ -1,13 +1,13 @@
-<app-header-extrato [cliente]="cliente"></app-header-extrato>
+<app-header-extrato #header [cliente]="cliente"></app-header-extrato>
 <div class="container">
   <div class="content-container">
     <div class="left-div">
-      <app-forms-transferencia  id="transferencia" [cliente]="cliente"></app-forms-transferencia>
+      <app-forms-transferencia  id="transferencia" (refreshEvent)="onRefresh()" [cliente]="cliente"></app-forms-transferencia>
       <app-info-conta   id="info" [cliente]="cliente"></app-info-conta>
     </div>
 
     <div class="right-div">
-      <app-list-transacoes [cliente]="cliente"></app-list-transacoes>
+      <app-list-transacoes #list [cliente]="cliente"></app-list-transacoes>
     </div>
   </div>
 </div>
